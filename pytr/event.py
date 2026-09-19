@@ -101,6 +101,8 @@ tr_event_type_mapping = {
     "PRIVATE_MARKET_FUND_TRADE_EXECUTED": ConditionalEventType.PRIVATE_MARKETS_ORDER,
     "PRIVATE_MARKETS_ORDER_CREATED": ConditionalEventType.PRIVATE_MARKETS_ORDER,
     "PRIVATE_MARKETS_TRADE_EXECUTED": ConditionalEventType.PRIVATE_MARKETS_ORDER,
+    # Depot transfers
+    "SECURITIES_TRANSFER_INCOMING": PPEventType.TRANSFER_IN,
 }
 
 timeline_legacy_migrated_events_title_type_mapping = {
@@ -621,6 +623,7 @@ class Event:
                     or eventTypeStr
                     in [
                         "BENEFITS_SPARE_CHANGE_EXECUTION",
+                        "SECURITIES_TRANSFER_INCOMING",
                     ]
                     or subtitle
                     in [
